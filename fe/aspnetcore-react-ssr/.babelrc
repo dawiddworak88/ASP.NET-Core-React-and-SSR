@@ -1,0 +1,6 @@
+{
+    "presets": ["@babel/env", "react-app"],
+    "ignore": [
+        "/(node_modules)/"
+      ]
+}
