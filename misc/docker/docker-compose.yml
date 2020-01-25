@@ -1,0 +1,16 @@
+version: '3'
+services:
+  react-ssr-web:
+    build: ../../fe/aspnetcore-react-ssr
+    image: react-ssr-web:react-ssr
+    environment: 
+      NODE_ENV: development
+    ports:
+      - "3000:3000"
+  aspnetcore-web:
+    build: ../../be/src/Project/AspNetCore
+    image: aspnetcore-web:aspnetcore
+    depends_on: 
+      - react-ssr-web
+    ports:
+        - "51111:80"
