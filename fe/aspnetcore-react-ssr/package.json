@@ -18,8 +18,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-	"build-fe": "webpack --mode production",
-	"watch-fe": "webpack --mode development -w"
+    "build-fe": "webpack --mode production",
+    "watch-fe": "webpack --mode development -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +46,7 @@
     "@storybook/preset-create-react-app": "1.5.2",
     "@storybook/react": "5.3.9",
     "autoprefixer": "9.7.4",
+    "babel-plugin-file-loader": "2.0.0",
     "babel-preset-react-app": "9.1.0",
     "copy-webpack-plugin": "5.1.1",
     "css-loader": "3.4.2",
