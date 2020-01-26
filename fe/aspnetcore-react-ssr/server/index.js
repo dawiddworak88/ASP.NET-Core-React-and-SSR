@@ -1,10 +1,14 @@
 import express from 'express';
 import serverRenderer from './middleware/renderer';
 
-const PORT = 3000;
 const path = require('path');
 
+const PORT = 3000;
+
 const app = express();
+
+app.use(express.static(path.resolve(__dirname, 'public')));
+
 const router = express.Router();
 
 router.use('^/$', serverRenderer);
