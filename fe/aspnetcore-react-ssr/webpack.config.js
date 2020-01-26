@@ -9,7 +9,7 @@ var browserConfig = {
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
@@ -27,13 +27,6 @@ var browserConfig = {
                         publicPath: "/fe/dist/images"
                     }
                 }]
-            },
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                use: [
-                    { loader: "eslint-loader" }
-                ]
             },
             {
                 test: /\.(js|jsx)$/,
@@ -69,11 +62,11 @@ var browserConfig = {
         extensions: [".js", ".jsx"]
     },
     entry: {
-        client: "./src/client.jsx"
+        app: "./src/App.js"
     },
     output: {
-        publicPath: path.resolve(__dirname, "../be/src/Project/Domrio.Website/wwwroot/fe/dist/js"),
-        path: path.resolve(__dirname, "../be/src/Project/Domrio.Website/wwwroot/fe/dist/js"),
+        publicPath: path.resolve(__dirname, "../../be/src/Project/AspNetCore/wwwroot/dist/js"),
+        path: path.resolve(__dirname, "../../be/src/Project/AspNetCore/wwwroot/dist/js"),
         filename: "[name].js"
     }
 };
