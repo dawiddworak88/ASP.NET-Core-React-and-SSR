@@ -42,7 +42,7 @@ var browserConfig = {
         }),
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, "wwwroot/fe/src/*.png"),
-            to: path.resolve(__dirname, "wwwroot/fe/dist/images") + "/[name].[ext]"
+            to: path.resolve(__dirname, "wwwroot/dist/images") + "/[name].[ext]"
         }])
     ],
     optimization: {
