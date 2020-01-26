@@ -1,7 +1,16 @@
 require('ignore-styles');
 
 require('@babel/register')({
-    plugins: ["babel-plugin-file-loader"]
+    plugins: [
+        [
+            "file-loader",
+            {
+				"name": "[name].[ext]",
+				"publicPath": "/dist/images",
+				"outputPath": "./dist"
+            }
+        ]
+	]
 });
 
 require('./index');
