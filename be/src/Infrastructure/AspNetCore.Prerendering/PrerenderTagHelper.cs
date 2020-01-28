@@ -65,7 +65,7 @@ namespace AspNetCore.Prerendering
 
                     var response = await client.PostAsync(endpointAddress, new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json"));
 
-                    ViewContext.HttpContext.Response.StatusCode = int.Parse(response.StatusCode.ToString());
+                    ViewContext.HttpContext.Response.StatusCode = (int)response.StatusCode;
 
                     var result = await response.Content.ReadAsStringAsync();
 
