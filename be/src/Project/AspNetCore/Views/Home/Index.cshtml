@@ -3,6 +3,10 @@
 <div id="root" asp-prerender-module="HomeIndex" asp-prerender-data="@Model">
 </div>
 
+@section HeadStyles {
+    <script src="~/dist/js/app.css" asp-append-version="true"></script>
+}
+
 @section BodyScripts {
-    <script src="~/dist/js/homeindex.js" asp-append-version="true"></script>
+    <script src="~/dist/js/app.js" asp-append-version="true"></script>
 }
