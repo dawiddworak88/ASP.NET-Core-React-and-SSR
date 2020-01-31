@@ -2,7 +2,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const isProduction = process.env.NODE_ENV === "production";
 
 var browserConfig = {
     module: {
@@ -38,7 +37,7 @@ var browserConfig = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "../../dist/css/main.css",
+            filename: "../../dist/css/[name].css",
         }),
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, "wwwroot/fe/src/*.png"),
@@ -54,7 +53,7 @@ var browserConfig = {
         extensions: [".js", ".jsx"]
     },
     entry: {
-        homeindex: "./src/index.js"
+        homeindex: ["./src/pages/App/index.js", "./src/pages/App/App.scss"]
     },
     output: {
         publicPath: path.resolve(__dirname, "../../be/src/Project/AspNetCore/wwwroot/dist/js"),

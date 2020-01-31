@@ -1,7 +1,8 @@
 import React from 'react';
 import { linkTo } from '@storybook/addon-links';
 import { Welcome } from '@storybook/react/demo';
-import App from '../App';
+import '../pages/App/App.scss';
+import App from '../pages/App/App';
 
 export default {
   title: 'Welcome',
