@@ -1,6 +1,6 @@
 ﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
 
-<div id="root" asp-prerender-module="HomeIndex" asp-prerender-data="@Model">
+<div id="root" asp-prerender-module="App" asp-prerender-data="@Model">
 </div>
 
 <script>
@@ -8,7 +8,7 @@
 </script>
 
 @section HeadStyles {
-    <script src="~/dist/js/app.css" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/dist/css/app.css" type="text/css" asp-append-version="true" />
 }
 
 @section BodyScripts {

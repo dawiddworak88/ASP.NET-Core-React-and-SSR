@@ -8,6 +8,7 @@ using System.Net.Http;
 using Microsoft.Extensions.Configuration;
 using System.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace AspNetCore.Prerendering
 {
@@ -63,7 +64,11 @@ namespace AspNetCore.Prerendering
                         Parameters = this.Parameters
                     };
 
-                    var response = await client.PostAsync(endpointAddress, new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json"));
+                    var response = await client.PostAsync(
+                        endpointAddress, 
+                        new StringContent(JsonConvert.SerializeObject(request, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() }), 
+                        Encoding.UTF8, 
+                        "application/json"));
 
                     ViewContext.HttpContext.Response.StatusCode = (int)response.StatusCode;
 

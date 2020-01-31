@@ -7,7 +7,7 @@ require('@babel/register')({
             {
 				"name": "[name].[ext]",
 				"publicPath": "/dist/images",
-				"outputPath": "../server/public/dist/images"
+				"outputPath": "../../../server/public/dist/images"
             }
         ]
 	]

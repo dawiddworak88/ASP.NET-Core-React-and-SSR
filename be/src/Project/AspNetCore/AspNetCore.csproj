@@ -12,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\dist\" />
+    <ProjectReference Include="..\..\Infrastructure\AspNetCore.Prerendering\AspNetCore.Prerendering.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\AspNetCore.Prerendering\AspNetCore.Prerendering.csproj" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 

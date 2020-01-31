@@ -2,6 +2,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 var browserConfig = {
     module: {
@@ -22,7 +23,7 @@ var browserConfig = {
                     options: {
                         name: "[name].[ext]",
                         outputPath: "../images",
-                        publicPath: "/fe/dist/images"
+                        publicPath: "/dist/images"
                     }
                 }]
             },
@@ -39,8 +40,12 @@ var browserConfig = {
         new MiniCssExtractPlugin({
             filename: "../../dist/css/[name].css",
         }),
+        new CleanWebpackPlugin({
+            dry: false,
+            dangerouslyAllowCleanPatternsOutsideProject: true
+        }),
         new CopyWebpackPlugin([{
-            from: path.resolve(__dirname, "wwwroot/fe/src/*.png"),
+            from: path.resolve(__dirname, "wwwroot/src/*.png"),
             to: path.resolve(__dirname, "wwwroot/dist/images") + "/[name].[ext]"
         }])
     ],
