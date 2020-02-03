@@ -1,7 +1,18 @@
 version: '3'
 services:
+  storybook-web:
+    build: 
+      context: ../../fe/aspnetcore-react-ssr
+      dockerfile: Dockerfile-storybook
+    image: storybook-web:storybook
+    environment: 
+      NODE_ENV: development
+    ports:
+      - "8091:9009"
   react-ssr-web:
-    build: ../../fe/aspnetcore-react-ssr
+    build: 
+      context: ../../fe/aspnetcore-react-ssr
+      dockerfile: Dockerfile-ssr
     image: react-ssr-web:react-ssr
     environment: 
       NODE_ENV: development

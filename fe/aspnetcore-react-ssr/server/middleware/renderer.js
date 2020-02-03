@@ -10,6 +10,10 @@ const Components = {
 export default (req, res, next) => {
 
     let Component = Components[req.body.moduleName];
-
-    return res.send(ReactDOMServer.renderToString(<Component {...req.body.parameters} />));
+	
+	if (Component) {
+		return res.send(ReactDOMServer.renderToString(<Component {...req.body.parameters} />));
+	}
+	
+	res.status(400).end();
 }
