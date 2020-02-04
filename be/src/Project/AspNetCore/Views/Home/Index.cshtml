@@ -1,8 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+<div id="root" asp-prerender-module="App" asp-prerender-data="@Model">
+</div>
+
+<script>
+    window.data = @Html.Raw(Json.Serialize(@Model));
+</script>
+
+@section HeadStyles {
+    <link rel="stylesheet" href="~/dist/css/app.css" type="text/css" asp-append-version="true" />
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@section BodyScripts {
+    <script src="~/dist/js/app.js" asp-append-version="true"></script>
+}

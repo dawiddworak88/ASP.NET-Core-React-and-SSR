@@ -20,7 +20,13 @@ namespace AspNetCore.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var viewModel = new HomeIndexViewModel
+            {
+                Welcome = "Welcome",
+                LearnMore = "Learn more"
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
