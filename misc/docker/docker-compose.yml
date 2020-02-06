@@ -19,7 +19,7 @@ services:
     ports:
       - "3000:3000"
   aspnetcore-web:
-    build: ../../be/src/Project/AspNetCore
+    build: ../../be/src
     image: aspnetcore-web:aspnetcore
     depends_on: 
       - react-ssr-web
