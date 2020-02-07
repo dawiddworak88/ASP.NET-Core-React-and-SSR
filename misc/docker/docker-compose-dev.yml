@@ -5,6 +5,7 @@ services:
       context: ../../fe/aspnetcore-react-ssr
       dockerfile: Dockerfile-storybook
     image: storybook-web:storybook
+    restart: always
     environment: 
       NODE_ENV: development
     ports:
@@ -14,6 +15,7 @@ services:
       context: ../../fe/aspnetcore-react-ssr
       dockerfile: Dockerfile-ssr
     image: react-ssr-web:react-ssr
+    restart: always
     environment: 
       NODE_ENV: development
     ports:
@@ -21,7 +23,11 @@ services:
   aspnetcore-web:
     build: ../../be/src
     image: aspnetcore-web:aspnetcore
+    restart: always
     depends_on: 
       - react-ssr-web
     ports:
-        - "51111:80"
+      - "51111:443"
+      - "51112:80"
+    environment:
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=aspnetcore
