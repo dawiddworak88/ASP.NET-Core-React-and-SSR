@@ -58,11 +58,11 @@ var browserConfig = {
         extensions: [".js", ".jsx"]
     },
     entry: {
-        app: ["./src/pages/App/index.js", "./src/pages/App/App.scss"]
+        homepage: ["./src/pages/HomePage/index.js", "./src/pages/HomePage/HomePage.scss"]
     },
     output: {
-        publicPath: path.resolve(__dirname, "../../be/src/Project/AspNetCore/wwwroot/dist/js"),
-        path: path.resolve(__dirname, "../../be/src/Project/AspNetCore/wwwroot/dist/js"),
+        publicPath: path.resolve(__dirname, "../be/src/Project/AspNetCore/wwwroot/dist/js"),
+        path: path.resolve(__dirname, "../be/src/Project/AspNetCore/wwwroot/dist/js"),
         filename: "[name].js"
     }
 };

@@ -2,7 +2,7 @@ version: '3'
 services:
   storybook-web:
     build: 
-      context: ../../fe/aspnetcore-react-ssr
+      context: ../../fe
       dockerfile: Dockerfile-storybook-dev
     image: storybook-web:storybook
     restart: always
@@ -12,7 +12,7 @@ services:
       - "8091:9009"
   react-ssr-web:
     build: 
-      context: ../../fe/aspnetcore-react-ssr
+      context: ../../fe
       dockerfile: Dockerfile-ssr-dev
     image: react-ssr-web:react-ssr
     restart: always

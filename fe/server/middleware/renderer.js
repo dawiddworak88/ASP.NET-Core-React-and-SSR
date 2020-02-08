@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 
-import App from '../../src/pages/App/App';
+import HomePage from '../../src/pages/HomePage/HomePage';
 
 const Components = {
-    App
+    HomePage
   };
 
 export default (req, res, next) => {

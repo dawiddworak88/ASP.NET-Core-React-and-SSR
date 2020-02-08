@@ -16,7 +16,8 @@
     "build-storybook": "build-storybook -s public",
     "build-fe-dev": "webpack --mode development",
     "build-fe": "webpack --mode production",
-    "watch-fe": "webpack --mode development -w"
+    "watch-fe": "webpack --mode development -w",
+    "ssr": "node server/bootstrap.js"
   },
   "eslintConfig": {
     "extends": "react-app"

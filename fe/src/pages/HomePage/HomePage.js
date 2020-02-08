@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 
-function App(props) {
+function HomePage(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="home-page">
+      <header className="home-page-header">
+        <img src={logo} className="home-page-logo" alt="logo" />
         <p>
           {props.welcome}
         </p>
@@ -17,4 +17,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default HomePage;
