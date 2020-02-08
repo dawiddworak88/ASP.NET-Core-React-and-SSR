@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Net.Http;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -24,8 +25,16 @@ namespace AspNetCore.Prerendering
             var hostEnv = (IWebHostEnvironment)serviceProvider.GetService(typeof(IWebHostEnvironment));
 
             var builder = new ConfigurationBuilder()
-            .SetBasePath(hostEnv.ContentRootPath)
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            .SetBasePath(hostEnv.ContentRootPath);
+
+            if (hostEnv.IsDevelopment())
+            {
+                builder = builder.AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true);
+            }
+            else
+            {
+                builder = builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            }
 
             Configuration = builder.Build();
         }
