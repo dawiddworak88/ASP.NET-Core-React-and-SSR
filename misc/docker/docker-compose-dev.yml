@@ -2,26 +2,31 @@ version: '3'
 services:
   storybook-web:
     build: 
-      context: ../../fe/aspnetcore-react-ssr
-      dockerfile: Dockerfile-storybook
+      context: ../../fe
+      dockerfile: Dockerfile-storybook-dev
     image: storybook-web:storybook
+    restart: always
     environment: 
       NODE_ENV: development
     ports:
       - "8091:9009"
   react-ssr-web:
     build: 
-      context: ../../fe/aspnetcore-react-ssr
-      dockerfile: Dockerfile-ssr
+      context: ../../fe
+      dockerfile: Dockerfile-ssr-dev
     image: react-ssr-web:react-ssr
+    restart: always
     environment: 
       NODE_ENV: development
     ports:
       - "3000:3000"
   aspnetcore-web:
-    build: ../../be/src/Project/AspNetCore
+    build: 
+      context: ../../be/src
+      dockerfile: Dockerfile-dev
     image: aspnetcore-web:aspnetcore
+    restart: always
     depends_on: 
       - react-ssr-web
     ports:
-        - "51111:80"
+      - "51117:80"
