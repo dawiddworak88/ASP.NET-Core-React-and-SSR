@@ -4,7 +4,7 @@ Spin up your next project using this ASP.NET Core, React with Server-Side Render
 
 * **.NET Core 3.1.1:** ASP.NET Core 3.1.1 to develop backend-code with C#
 * **React 16.12.0 with Server-Side Rendering:** to develop frontend-code with JavaScript. The boilerplate supports Server-Side Rendering
-* **Storybook 5.3.9:** to show clients prototypes of your pages quickly
+* **Storybook 5.3.12:** to show clients prototypes of your pages quickly
 
 ## Installation
 
@@ -54,7 +54,7 @@ To efficiently develop new components and pages, stop docker containers and star
 
     node server/bootstrap.js
 
-5. You want to integrate your work into ASP.NET Core web application. To achieve this add your new page to /fe/webpack.config.js as shown in an example homepage component. To bundle, minify and copy the css and js assets to ASP.NET Core wwwroot directy execute:
+5. You want to integrate your work into ASP.NET Core web application. To achieve this add your new page to /fe/webpack.config.js as shown in an example homepage component. To bundle, minify and copy the css and js assets to ASP.NET Core wwwroot execute:
 
     npm run build-fe
 
