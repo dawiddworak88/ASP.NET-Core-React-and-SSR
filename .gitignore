@@ -28,9 +28,6 @@ bld/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-# Frontend build results
-dist/
-
 # NUNIT
 *.VisualState.xml
 TestResult.xml
