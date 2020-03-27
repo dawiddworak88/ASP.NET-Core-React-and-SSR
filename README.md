@@ -3,8 +3,8 @@
 Spin up your next project using this ASP.NET Core, React with Server-Side Rendering and Storybook boilerplate.
 
 * **.NET Core 3.1.2:** ASP.NET Core 3.1.2 to develop backend-code with C#
-* **React 16.12.0 with Server-Side Rendering:** to develop frontend-code with JavaScript. The boilerplate supports Server-Side Rendering
-* **Storybook 5.3.14:** to show clients prototypes of your pages quickly
+* **React 16.13.1 with Server-Side Rendering:** to develop frontend-code with JavaScript. The boilerplate supports Server-Side Rendering
+* **Storybook 5.3.17:** to show clients prototypes of your pages quickly
 
 ## Installation
 
