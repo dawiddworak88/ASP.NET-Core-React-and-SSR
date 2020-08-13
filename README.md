@@ -2,7 +2,7 @@
 
 Spin up your next project using this ASP.NET Core, React with Server-Side Rendering and Storybook boilerplate.
 
-* **.NET Core 3.1.2:** ASP.NET Core 3.1.2 to develop backend-code with C#
+* **.NET Core 3.1.7:** ASP.NET Core 3.1.7 to develop backend-code with C#
 * **React 16.13.1 with Server-Side Rendering:** to develop frontend-code with JavaScript. The boilerplate supports Server-Side Rendering
 * **Storybook 5.3.17:** to show clients prototypes of your pages quickly
 
@@ -10,7 +10,7 @@ Spin up your next project using this ASP.NET Core, React with Server-Side Render
 
 ### Prerequisites
 
-* **[.NET Core 3.1.2](https://dotnet.microsoft.com/download/dotnet-core/3.1):** download and install the latest version
+* **[.NET Core 3.1.7](https://dotnet.microsoft.com/download/dotnet-core/3.1):** download and install the latest version
 * **[Node.js](https://nodejs.org/en/download/):** download and install the latest LTS version
 * **[Docker](http://hub.docker.com/):** to run ASP.NET Core web app, Node for SSR and Storybook in containers. Download and install the latest version
 
@@ -22,17 +22,16 @@ Spin up your next project using this ASP.NET Core, React with Server-Side Render
 ### Quickstart
 
 1. Clone this repository
+
 2. Execute the following commands from the /fe folder to build fe:
 
     npm install
 
     npm run build-fe
 
-3. Exectue the following commands from the /misc/docker folder to run the services:
+3. Open the project from the be folder in Visual Studio 2019, set the docker-compose project as the startup project and hit F5
 
-    docker-compose -f docker-compose-dev.yml up --build -d
-
-**The ASP.NET Core web application will be available at http://localhost:51117**
+**The ASP.NET Core web application will be available at http://localhost:5000**
 
 **The Storybook will be available at http://localhost:8091**
 

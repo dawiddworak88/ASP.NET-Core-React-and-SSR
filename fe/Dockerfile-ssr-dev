@@ -4,7 +4,9 @@ RUN mkdir -p /home/node/aspnetcore-react-ssr/node_modules && chown -R node:node 
 
 WORKDIR /home/node/aspnetcore-react-ssr
 
-COPY package*.json ./
+COPY package.json ./
+
+COPY package-lock.json ./
 
 USER node
 

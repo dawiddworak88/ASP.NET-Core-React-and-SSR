@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  aspnetcore:
+    image: ${DOCKER_REGISTRY-}aspnetcore
+    build:
+      context: .
+      dockerfile: Project/AspNetCore/Dockerfile
+    depends_on:
+      - react-ssr-web
+
+  react-ssr-web:
+    image: ${DOCKER_REGISTRY-}reactssrweb
+    build:
+      context: ../../fe
+      dockerfile: Dockerfile-ssr-dev
+
+  storybook:
+    image: ${DOCKER_REGISTRY-}storybook
+    build:
+      context: ../../fe
+      dockerfile: Dockerfile-storybook-dev

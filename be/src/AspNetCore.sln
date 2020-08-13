@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore", "Project\AspNe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{89A813A9-9007-46EC-8F17-F2816F9202CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.Prerendering", "Infrastructure\AspNetCore.Prerendering\AspNetCore.Prerendering.csproj", "{595213AC-0132-4EFB-8256-D675D5FCC359}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Prerendering", "Infrastructure\AspNetCore.Prerendering\AspNetCore.Prerendering.csproj", "{595213AC-0132-4EFB-8256-D675D5FCC359}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4F97BEE2-AEE0-4DFF-8BEC-5F4D53E7523A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{595213AC-0132-4EFB-8256-D675D5FCC359}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{595213AC-0132-4EFB-8256-D675D5FCC359}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{595213AC-0132-4EFB-8256-D675D5FCC359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F97BEE2-AEE0-4DFF-8BEC-5F4D53E7523A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F97BEE2-AEE0-4DFF-8BEC-5F4D53E7523A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F97BEE2-AEE0-4DFF-8BEC-5F4D53E7523A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F97BEE2-AEE0-4DFF-8BEC-5F4D53E7523A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

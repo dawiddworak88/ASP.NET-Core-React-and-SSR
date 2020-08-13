@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  aspnetcore:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
+    ports:
+      - "5000:5000"
+
+  react-ssr-web:
+    ports:
+      - "3000:3000"
+
+  storybook:
+    ports:
+      - "8091:9009"
