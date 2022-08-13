@@ -1,4 +1,6 @@
-FROM node:12.14.1-alpine
+FROM node:18.7.0-alpine
+
+RUN apk update && apk add python3 make g++
 
 RUN mkdir -p /home/node/aspnetcore-react-ssr/node_modules && chown -R node:node /home/node/aspnetcore-react-ssr
 
@@ -8,9 +10,11 @@ COPY package.json ./
 
 COPY package-lock.json ./
 
-USER node
+USER root
 
 RUN npm install
+
+USER node
 
 COPY --chown=node:node . .
 

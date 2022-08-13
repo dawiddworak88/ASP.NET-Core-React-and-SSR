@@ -1,7 +1,6 @@
 ﻿const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 var browserConfig = {
@@ -17,15 +16,8 @@ var browserConfig = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: [{
-                    loader: "file-loader",
-                    options: {
-                        name: "[name].[ext]",
-                        outputPath: "../images",
-                        publicPath: "/dist/images"
-                    }
-                }]
+                test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/inline',
             },
             {
                 test: /\.(js|jsx)$/,
@@ -43,15 +35,11 @@ var browserConfig = {
         new CleanWebpackPlugin({
             dry: false,
             dangerouslyAllowCleanPatternsOutsideProject: true
-        }),
-        new CopyWebpackPlugin([{
-            from: path.resolve(__dirname, "wwwroot/src/*.png"),
-            to: path.resolve(__dirname, "wwwroot/dist/images") + "/[name].[ext]"
-        }])
+        })
     ],
     optimization: {
         minimizer: [
-            new OptimizeCSSAssetsPlugin({})
+            new CssMinimizerPlugin({})
         ]
     },
     resolve: {
