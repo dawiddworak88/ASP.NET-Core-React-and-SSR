@@ -29,7 +29,7 @@ Spin up your next project using this ASP.NET Core, React with Server-Side Render
 
     npm run build-fe
 
-3. Open the project from the be folder in Visual Studio 2019, set the docker-compose project as the startup project and hit F5
+3. Open the project from the be folder in Visual Studio 2022, set the docker-compose project as the startup project and hit F5
 
 **The ASP.NET Core web application will be available at http://localhost:5000**
 
