@@ -2,22 +2,22 @@
 
 Spin up your next project using this ASP.NET Core, React with Server-Side Rendering and Storybook boilerplate.
 
-* **.NET Core 3.1.17:** ASP.NET Core 3.1.17 to develop backend-code with C#
-* **React 16.13.1 with Server-Side Rendering:** to develop frontend-code with JavaScript. The boilerplate supports Server-Side Rendering
-* **Storybook 5.3.17:** to show clients prototypes of your pages quickly
+* **.NET 6.0.8** .NET 6.0.8 to develop backend-code with C#
+* **React 18.2.0 with Server-Side Rendering:** to develop frontend-code with JavaScript. The boilerplate supports Server-Side Rendering
+* **Storybook 6.5.10:** to show clients prototypes of your pages quickly
 
 ## Installation
 
 ### Prerequisites
 
-* **[.NET Core 3.1.17](https://dotnet.microsoft.com/download/dotnet-core/3.1):** download and install the latest version
+* **[.NET](https://dotnet.microsoft.com/en-us/download):** download and install the latest version
 * **[Node.js](https://nodejs.org/en/download/):** download and install the latest LTS version
 * **[Docker](http://hub.docker.com/):** to run ASP.NET Core web app, Node for SSR and Storybook in containers. Download and install the latest version
 
 ### Nice to have prerequisites
 
 * **[Visual Studio Code](https://code.visualstudio.com/download):** IDE to develop frontend code
-* **[Visual Studio 2019 Community](https://visualstudio.microsoft.com/pl/vs/):** IDE to develop backend code
+* **[Visual Studio 2022 Community](https://visualstudio.microsoft.com/pl/vs/):** IDE to develop backend code
 
 ### Quickstart
 
@@ -29,7 +29,7 @@ Spin up your next project using this ASP.NET Core, React with Server-Side Render
 
     npm run build-fe
 
-3. Open the project from the be folder in Visual Studio 2019, set the docker-compose project as the startup project and hit F5
+3. Open the project from the be folder in Visual Studio 2022, set the docker-compose project as the startup project and hit F5
 
 **The ASP.NET Core web application will be available at http://localhost:5000**
 
@@ -67,31 +67,11 @@ To efficiently develop new components and pages, stop docker containers and star
 
     npm install --global webpack
 
-2. In case you experience a problem with a missing NODE_ENV upon frontend build (yes, Windows) execute the command from the /fe folder:
-
-    * Windows Command Prompt:
-
-    SET NODE_ENV=production&&npm run build-fe
-
-    * Windows Powershell:
-
-    $env:NODE_ENV="production";npm run build-fe
-
-3. In case you experience a problem with a missing NODE_ENV upon node server run (for SSR) execute the command from the /fe folder:
-
-    * Windows Command Prompt:
-
-    SET NODE_ENV=production&&node server/bootstrap.js
-
-    * Windows Powershell:
-
-    $env:NODE_ENV="production";node server/bootstrap.js
-
-4. SocketException: No connection could be made because the target machine actively refused it:
+2. SocketException: No connection could be made because the target machine actively refused it:
 
 Please make sure that your node server is up and running. Check if your ServerSideRenderingEndpoint in appsettings.json and appsettings.Development.json point to http://localhost:3000 (for local node server) or http://react-ssr-web:3000 (for Docker node server).
 
-5. window is not defined or global is not defined:
+3. window is not defined or global is not defined:
 
 There is a good chance your window or global variables are undefined when doing SSR. Please have a look at [Stack Overflow](https://stackoverflow.com/questions/38951721/react-js-server-side-issue-window-not-found) to find ways to fix your code.
 
