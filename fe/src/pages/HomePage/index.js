@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrateRoot } from 'react-dom/client';
 import HomePage from './HomePage';
 
-ReactDOM.hydrate(<HomePage {...window.data} />, document.getElementById('root'));
+hydrateRoot(document.getElementById("root"), <HomePage {...window.data} />)
